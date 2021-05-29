@@ -154,40 +154,4 @@ describe("cloneTypedArray", () => {
     expect(copy.byteOffset).toEqual(0);
     expect(copy[0]).toEqual(42);
   });
-
-  it("should copy a BigInt64Array", () => {
-    const buffer = new ArrayBuffer(16);
-    const bigInt64Array = new BigInt64Array(buffer, 0);
-    bigInt64Array[0] = BigInt(42);
-
-    const copy = cloneTypedArray(bigInt64Array);
-
-    expect(copy).not.toBe(bigInt64Array);
-    expect(Object.prototype.toString.call(copy)).toEqual(
-      "[object BigInt64Array]"
-    );
-    expect(copy.BYTES_PER_ELEMENT).toEqual(8);
-    expect(copy.length).toEqual(2);
-    expect(copy.byteLength).toEqual(16);
-    expect(copy.byteOffset).toEqual(0);
-    expect(copy[0]).toEqual(BigInt(42));
-  });
-
-  it("should copy a BigUint64Array", () => {
-    const buffer = new ArrayBuffer(16);
-    const bigUint64Array = new BigUint64Array(buffer, 0);
-    bigUint64Array[0] = BigInt(42);
-
-    const copy = cloneTypedArray(bigUint64Array);
-
-    expect(copy).not.toBe(bigUint64Array);
-    expect(Object.prototype.toString.call(copy)).toEqual(
-      "[object BigUint64Array]"
-    );
-    expect(copy.BYTES_PER_ELEMENT).toEqual(8);
-    expect(copy.length).toEqual(2);
-    expect(copy.byteLength).toEqual(16);
-    expect(copy.byteOffset).toEqual(0);
-    expect(copy[0]).toEqual(BigInt(42));
-  });
 });

@@ -17,8 +17,6 @@ const TypedArrayMap: Record<string, Function> = {
   "[object Uint8ClampedArray]": cloneTypedArray,
   "[object Uint16Array]": cloneTypedArray,
   "[object Uint32Array]": cloneTypedArray,
-  "[object BigInt64Array]": cloneTypedArray,
-  "[object BigUint64Array]": cloneTypedArray,
   "[object RegExp]": cloneRegExp,
 };
 

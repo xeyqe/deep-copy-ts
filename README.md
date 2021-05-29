@@ -1,6 +1,7 @@
 # deep-copy-ts
 
 A deep-copy (a.k.a. clone) utility function for TypeScript, based on [ts-deepcopy](https://github.com/ykdr2017/ts-deepcopy). Explore it in [CodeSandbox](https://codesandbox.io/s/laughing-pare-636xh).
+Removed BigInt64Array and BigUint64Array (cause Apple and it's Safari don't like it for some reason).
 
 ## Installation
 
@@ -54,9 +55,6 @@ const obj = {
   t: new Uint16Array(new ArrayBuffer(16), 0),
   u: new Uint32Array(new ArrayBuffer(16), 0),
   v: new Uint8ClampedArray(new ArrayBuffer(16), 0),
-  // not supported in Safari yet
-  w: new BigInt64Array(new ArrayBuffer(16), 0),
-  x: new BigUint64Array(new ArrayBuffer(16), 0),
 };
 
 const obj2 = deepCopy(obj);
